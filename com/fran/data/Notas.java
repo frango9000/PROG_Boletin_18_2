@@ -121,4 +121,9 @@ public class Notas {
         public static float calcNotaMediaGrupo(float f, int i){
         return f / i;
     }
+
+    @Override
+    public String toString() {
+        return "Notas{" + "notaTeorico1=" + notaTeorico1 + ", notaTeorico2=" + notaTeorico2 + ", notaPractico=" + notaPractico + ", boletines=" + boletines + ", boletinesTotales=" + boletinesTotales + '}';
+    }
 }

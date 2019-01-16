@@ -5,6 +5,7 @@
  */
 package com.fran.app;
 
+import com.fran.data.Notas;
 import com.fran.data.Personal;
 import java.util.Scanner;
 /**
@@ -20,11 +21,12 @@ public class Aplicacion {
         //Personal alum = new Personal(986000000, "correo@dominio.com");
         Scanner scan = new Scanner(System.in);  
         
-        Academica academica = new Academica("Francisco", new Personal(986000000, "correo@dominio.com"));
+        Academica academica = new Academica("Francisco",new Notas(), new Personal(986000000, "correo@dominio.com"));
         
-        academica.setNota(academica.pedirNota());
+        academica.getNota().pedirDatos();
         
-        System.out.println(academica.toString());   
+        System.out.println(academica.toString());  
+        System.out.println(academica.getNota().calcNotaFinal());
     }
     
 }

@@ -7,22 +7,25 @@ package com.fran.app;
 
 import com.fran.data.*;
 import java.util.Scanner;
+
 /**
  *
  * @author fsancheztemprano
  */
 public class Academica {
-    private static int numReferencia =2018;
-    
+
+    private static int numReferencia = 2018;
+
     private int matricula;
     private String nombre;
-    private float nota;
+    private Notas notas;
     private Personal personal;
 
-    public Academica(String nombre, Personal personal) {
+    public Academica(String nombre,Notas notas, Personal personal) {
         this.nombre = nombre;
         this.personal = personal;
         this.matricula = numReferencia;
+        this.notas = notas;
         numReferencia++;
     }
 
@@ -38,39 +41,20 @@ public class Academica {
         return nombre;
     }
 
-    public float getNota() {
-        return nota;
-    }
-
-    public float calcularNota() {
-        return getNota();
+    public Notas getNota() {
+        return notas;
     }
 
     public Personal getPersonal() {
         return personal;
     }
-    
-    public float pedirNota(){
-        Scanner scan = new Scanner(System.in);
-        float fl;
-        do{
-            System.out.println("Introduce Nota (0,10) :");
-            fl=scan.nextFloat();
-        }while(!verificarNota(fl));
-        return fl;
-    }
-    public boolean verificarNota(float nota){
-        return !(nota > 10 || nota < 0);
-    }
 
-    public void setNota(float nota) {
-            this.nota = nota;
+    public void setNota(Notas notas) {
+        this.notas = notas;
     }
 
     @Override
     public String toString() {
-        return "Academica{" + "matricula=" + matricula + ", nombre=" + nombre + ", nota=" + nota + ", correo=" + personal.getCorreo() + ", telefono=" + personal.getTelefono() + '}';
+        return "Academica{" + "matricula=" + matricula + ", nombre=" + nombre + ", notas=" + notas + ", personal=" + personal + '}';
     }
-    
-    
 }
